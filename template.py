@@ -3,7 +3,7 @@
 import requests
 import sys
 import threading
-import Queue
+from queue import SimpleQueue
 import socket
 import time
 
@@ -57,7 +57,7 @@ if __name__ == "__main__":
     if len(sys.argv) < 3:
         print 'Usage: ' + sys.argv[0] + ' server_list.txt userpass_list.txt'
     else:
-        queue = Queue.Queue()
+        queue = SimpleQueue()
         threads = []
         for i in range(threads_count):
             worker = StartThread(queue, i)
