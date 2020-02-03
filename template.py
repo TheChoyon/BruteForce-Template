@@ -1,5 +1,5 @@
 # Multithreaded template for brute/checker automation
-# Personal use only, Threading concept required to use properly
+# Personal use only, Threading, OOP concept required to use properly
 import requests
 import sys
 import threading
@@ -69,7 +69,6 @@ if __name__ == "__main__":
             for a_server in servs:
                 a_server = a_server.replace('\n', '')
                 queue.put(a_server)
-            #queue.join()
             for item in threads:
                 item.join()
     print 'DONE Scanning!'
